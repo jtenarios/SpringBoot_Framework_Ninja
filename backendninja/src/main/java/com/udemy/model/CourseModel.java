@@ -2,6 +2,15 @@ package com.udemy.model;
 
 public class CourseModel {
 
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	private int id; // no debería ponerlo pero me falla el checkpoint 2
 	private String name;
 	private String description;
 	private int price;

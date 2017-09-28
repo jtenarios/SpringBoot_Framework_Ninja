@@ -1,6 +1,5 @@
 package com.udemy.service.impl;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.commons.logging.Log;
@@ -63,8 +62,10 @@ public class CourseServiceImpl implements CourseService{
 	}
 
 	@Override
-	public int removeCourse(int id) {
-		courseJpaRepository.delete(id);
+	public int removeCourse(int idCourse) {
+		LOG.info("Call: " + "removeCourse(" + idCourse + ")");
+		
+		courseJpaRepository.delete(idCourse);
 		return 0;
 	}
 

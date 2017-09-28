@@ -9,10 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.portlet.ModelAndViewDefiningException;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.udemy.converter.CourseConverter;
 import com.udemy.entity.Course;
 import com.udemy.model.CourseModel;
 import com.udemy.service.CourseService;
@@ -68,5 +66,15 @@ public class CourseController {
 		courseService.addCourse(courseModel);
 		return "redirect:/courses/listcourses";
 	}
+
+	// Elimina el curso según Id
+	@PostMapping("/deletecourse")
+	 public String deleteCourse(@ModelAttribute("course") Course course) {
+	 LOG.info("Call: " + "removeCourse()..." + " -- Param: " + "...");
+	 courseService.removeCourse(course.getId());
+	 LOG.info("Eliminado!");
+	 return "redirect:/courses/listcourses";
+	 }
+	
 
 }

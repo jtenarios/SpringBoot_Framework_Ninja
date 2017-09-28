@@ -5,7 +5,6 @@ import java.util.List;
 
 import org.springframework.stereotype.Component;
 
-import com.mysql.fabric.xmlrpc.base.Array;
 import com.udemy.entity.Course;
 import com.udemy.model.CourseModel;
 
@@ -20,6 +19,7 @@ public class CourseConverter {
 		courseModel.setDescription(course.getDescription());
 		courseModel.setPrice(course.getHours());
 		courseModel.setHours(course.getHours());
+		courseModel.setId(course.getId());
 		
 		return courseModel;
 	}
@@ -32,6 +32,7 @@ public class CourseConverter {
 		course.setDescription(courseModel.getDescription());
 		course.setPrice(courseModel.getHours());
 		course.setHours(courseModel.getHours());
+		course.setId(courseModel.getId());
 		
 		return course;
 		
